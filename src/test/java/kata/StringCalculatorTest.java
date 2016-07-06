@@ -33,5 +33,11 @@ public class StringCalculatorTest {
 		int result = stringCalculator.addStringNumbers("2,3");
 		assertTrue("addition failed", result == 5);
 	}
+	
+	@Test
+	public void adding_string_with_any_numbers_should_add(){
+		int result = stringCalculator.addStringNumbers("2,3,4");
+		assertTrue("addition failed", result == 9);
+	}
 
 }
