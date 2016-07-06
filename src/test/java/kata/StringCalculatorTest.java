@@ -29,15 +29,21 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	public void adding_two_value_should_add(){
+	public void adding_two_value_seperated_by_comma_should_add(){
 		int result = stringCalculator.addStringNumbers("2,3");
 		assertTrue("addition failed", result == 5);
 	}
 	
 	@Test
-	public void adding_string_with_any_numbers_should_add(){
+	public void adding_string_with_any_numbers_seperated_by_comma_should_add(){
 		int result = stringCalculator.addStringNumbers("2,3,4");
 		assertTrue("addition failed", result == 9);
+	}
+	
+	@Test
+	public void adding_string_with_any_numbers_seperated_by_comma_or_newline_delimiter_should_add(){
+		int result = stringCalculator.addStringNumbers("1,3\n6");
+		assertTrue("addition failed", result == 10);
 	}
 
 }

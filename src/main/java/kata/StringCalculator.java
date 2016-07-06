@@ -9,9 +9,9 @@ public class StringCalculator {
 		else if(input.length() == 1){
 			return Integer.valueOf(input);
 		}
-		else if(input.contains(",")){
-			// String removedCommaInput = input.substring(1, 1);
-			String[] removedCommaInput = input.split(",");
+		else if(input.contains(",") || input.contains("\n")){
+			String replaceNewLineDelimiterToComma = input.replaceAll("\n", ",");
+			String[] removedCommaInput = replaceNewLineDelimiterToComma.split(",");
 			int sum = 0;
 			for(String value : removedCommaInput){
 				sum = sum + Integer.valueOf(value);
